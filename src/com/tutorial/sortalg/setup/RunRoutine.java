@@ -50,7 +50,7 @@ public class RunRoutine {
             long memoryBefore = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
             // Run algorithm
-
+            algorithm.sort(dataToSort, objectsCreatedByAlgorithm);
 
             // Obtain benchmark numbers after sorting
             long memoryAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();

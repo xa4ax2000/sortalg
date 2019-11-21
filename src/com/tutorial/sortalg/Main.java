@@ -7,6 +7,7 @@ public class Main {
         // Load Algorithms
         RunRoutine.load();
 
-
+        // Run Benchmark
+        RunRoutine.benchmark();
     }
 }

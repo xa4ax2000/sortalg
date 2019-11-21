@@ -10,16 +10,13 @@ public class BubbleSort implements SortingAlgorithm {
 
     @Override
     public SortingNumber[] sort(SortingNumber[] data) {
-        boolean finished = false;
-        while(!finished){
-            int n = data.length;
-            finished=true;
-            for(int i = 0; i < n-1; i++){
-                if(data[i].getSortingValue()>data[i+1].getSortingValue()){
-                    finished=false;
-                    SortingNumber temp = data[i];
-                    data[i] = data[i+1];
-                    data[i+1] = temp;
+        int n = data.length;
+        for(int i = 0; i < n-1; i++){
+            for(int j = 0; j < n-i-1; j++){
+                if(data[j].getSortingValue()>data[j+1].getSortingValue()){
+                    SortingNumber temp = data[j];
+                    data[j] = data[j+1];
+                    data[j+1] = temp;
                 }
             }
         }

@@ -17,7 +17,6 @@ public class RunRoutine {
      * Loads the data and algorithms to be used for benchmarking space and time complexity
      */
     public static void load(){
-        algorithms.iterator().remove();
         // Load Data
         Random random = new Random();
         for(int i = 0; i < unsortedData.length; i++){

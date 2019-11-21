@@ -8,6 +8,7 @@ public class BubbleSort implements SortingAlgorithm {
         return "BUBBLE SORT";
     }
 
+    //[4, 3, 2, 1, 5]
     @Override
     public SortingNumber[] sort(SortingNumber[] data) {
         int n = data.length;

@@ -45,18 +45,13 @@ public class RunRoutine {
 
             // Obtain benchmark numbers before sorting
             long startTime = System.currentTimeMillis();
-            List<Object> objectsCreatedByAlgorithm = new ArrayList<>();
-            System.gc();
-            long memoryBefore = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
             // Run algorithm
-            SortingNumber[] sortedData = algorithm.sort(dataToSort, objectsCreatedByAlgorithm);
+            SortingNumber[] sortedData = algorithm.sort(dataToSort);
 
             // Obtain benchmark numbers after sorting
-            long memoryAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
             long endTime = System.currentTimeMillis();
             System.out.println("Finished Sorting in: " + (endTime-startTime/1000) + " seconds");
-            System.out.println("Memory used: " + (memoryAfter-memoryBefore) + " bytes");
 
             validate(sortedData);
         }

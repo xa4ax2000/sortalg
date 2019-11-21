@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface SortingAlgorithm {
     String getAlgorithm();
-    SortingNumber[] sort(SortingNumber[] data, List<Object> objectsCreatedByAlgorithm);
+    SortingNumber[] sort(SortingNumber[] data);
 }

@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class RunRoutine {
 
-    private static final int SIZE = 10000;
+    private static final int SIZE = 100000;
     private static SortingNumber[] unsortedData = new SortingNumber[SIZE];
     private static List<SortingAlgorithm> algorithms = new ArrayList<>();
 
@@ -78,11 +78,15 @@ public class RunRoutine {
             }
         }
 
-        if(!sorted){
-            System.out.println("This array is NOT SORTED!");
+        if(sorted){
+            System.out.println("SORTED: true");
+        }else{
+            System.out.println("SORTED: false");
         }
-        if(!stable){
-            System.out.println("This array is NOT STABLE!");
+        if(stable){
+            System.out.println("STABLE: true");
+        }else{
+            System.out.println("STABLE: false");
         }
     }
 }

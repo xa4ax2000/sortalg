@@ -5,7 +5,8 @@ import java.util.function.Supplier;
 
 public enum Algorithm {
     // Append as we add more algorithms
-    SELECTION(SelectionSort::new);
+    SELECTION(SelectionSort::new),
+    BUBBLE(BubbleSort::new);
 
 
     // Supplier class variable

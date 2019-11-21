@@ -37,6 +37,7 @@ public class RunRoutine {
     public static void benchmark(){
         System.out.println("Beginning benchmarking.");
         for(SortingAlgorithm algorithm : algorithms){
+            System.out.println("===========================");
             System.out.println("Benchmarking: " + algorithm.getAlgorithm());
 
             // Create copy of data to sort
@@ -88,5 +89,6 @@ public class RunRoutine {
         }else{
             System.out.println("STABLE: false");
         }
+        System.out.println("===========================");
     }
 }

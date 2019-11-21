@@ -50,14 +50,35 @@ public class RunRoutine {
             long memoryBefore = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
             // Run algorithm
-            algorithm.sort(dataToSort, objectsCreatedByAlgorithm);
+            SortingNumber[] sortedData = algorithm.sort(dataToSort, objectsCreatedByAlgorithm);
 
             // Obtain benchmark numbers after sorting
             long memoryAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
             long endTime = System.currentTimeMillis();
             System.out.println("Finished Sorting in: " + (endTime-startTime/1000) + " seconds");
             System.out.println("Memory used: " + (memoryAfter-memoryBefore) + " bytes");
+
+            validate(sortedData);
         }
         System.out.println("Ending benchmarking.");
+    }
+
+    private static void validate(SortingNumber[] sortedData){
+        for(int i = 0; i < sortedData.length; i++){
+            SortingNumber currentNumber = sortedData[i];
+            SortingNumber nextNumber = null;
+            if(i+1 < sortedData.length){
+                nextNumber = sortedData[i+1];
+            }
+
+            if(nextNumber!=null){
+                if(currentNumber.getSortingValue()>nextNumber.getSortingValue()){
+                    System.out.println("This array is NOT SORTED!");
+                }else if(currentNumber.getSortingValue()==nextNumber.getSortingValue()
+                        && currentNumber.getCounter()>nextNumber.getCounter()){
+                    System.out.println("This array is NOT STABLE!");
+                }
+            }
+        }
     }
 }

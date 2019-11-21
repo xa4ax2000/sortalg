@@ -51,7 +51,7 @@ public class RunRoutine {
 
             // Obtain benchmark numbers after sorting
             long endTime = System.currentTimeMillis();
-            System.out.println("Finished Sorting in: " + (endTime-startTime/1000) + " seconds");
+            System.out.println("Finished Sorting in: " + ((endTime-startTime)/1000) + " seconds");
 
             validate(sortedData);
         }
@@ -59,6 +59,8 @@ public class RunRoutine {
     }
 
     private static void validate(SortingNumber[] sortedData){
+        boolean sorted = true;
+        boolean stable = true;
         for(int i = 0; i < sortedData.length; i++){
             SortingNumber currentNumber = sortedData[i];
             SortingNumber nextNumber = null;
@@ -68,12 +70,19 @@ public class RunRoutine {
 
             if(nextNumber!=null){
                 if(currentNumber.getSortingValue()>nextNumber.getSortingValue()){
-                    System.out.println("This array is NOT SORTED!");
+                    sorted = false;
                 }else if(currentNumber.getSortingValue()==nextNumber.getSortingValue()
                         && currentNumber.getCounter()>nextNumber.getCounter()){
-                    System.out.println("This array is NOT STABLE!");
+                    stable = false;
                 }
             }
+        }
+
+        if(!sorted){
+            System.out.println("This array is NOT SORTED!");
+        }
+        if(!stable){
+            System.out.println("This array is NOT STABLE!");
         }
     }
 }

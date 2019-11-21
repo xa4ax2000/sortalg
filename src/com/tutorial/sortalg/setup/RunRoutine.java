@@ -10,7 +10,8 @@ import java.util.Random;
 
 public class RunRoutine {
 
-    private static SortingNumber[] unsortedData = new SortingNumber[1000000];
+    private static final int SIZE = 10000;
+    private static SortingNumber[] unsortedData = new SortingNumber[SIZE];
     private static List<SortingAlgorithm> algorithms = new ArrayList<>();
 
     /**
@@ -21,7 +22,7 @@ public class RunRoutine {
         Random random = new Random();
         for(int i = 0; i < unsortedData.length; i++){
             // Note: Can contain duplicates!
-            unsortedData[i] = new SortingNumber(random.nextInt(1000000)+1);
+            unsortedData[i] = new SortingNumber(random.nextInt(SIZE)+1);
         }
 
         // Load Algorithms
@@ -39,7 +40,7 @@ public class RunRoutine {
             System.out.println("Benchmarking: " + algorithm.getAlgorithm());
 
             // Create copy of data to sort
-            SortingNumber[] dataToSort = new SortingNumber[1000000];
+            SortingNumber[] dataToSort = new SortingNumber[SIZE];
             System.arraycopy(unsortedData,0, dataToSort,0, unsortedData.length);
 
             // Obtain benchmark numbers before sorting

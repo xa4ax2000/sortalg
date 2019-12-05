@@ -9,7 +9,8 @@ public enum Algorithm {
     BUBBLE(BubbleSort::new),
     RECURSIVE_BUBBLE(RecursiveBubbleSort::new),
     INSERTION(InsertionSort::new),
-    RECURSIVE_INSERTION(RecursiveInsertionSort::new);
+    RECURSIVE_INSERTION(RecursiveInsertionSort::new),
+    MERGE(MergeSort::new);
 
 
     // Supplier class variable
